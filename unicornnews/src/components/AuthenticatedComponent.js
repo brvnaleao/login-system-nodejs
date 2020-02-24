@@ -42,7 +42,7 @@ class AuthenticatedComponent extends Component{
         }
         return(
             <div>
-                hELLO WORD
+                {/*stil needs to implement*/}
             </div>
         );
     }
