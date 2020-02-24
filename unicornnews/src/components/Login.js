@@ -31,10 +31,13 @@ class Login extends Component{
             email: this.state.email
           
             }).then(res => {
+                console.log(res)
                 
                 localStorage.setItem('jwt', res.data);
                 this.props.history.push('/AuthenticatedComponent');
             
+            }).catch(err => {
+                console.error(err)
             })
     }
 
