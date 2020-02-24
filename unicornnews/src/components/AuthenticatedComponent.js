@@ -44,12 +44,16 @@ class AuthenticatedComponent extends Component{
             )
         }
         return(
+
             <div className="div">
                 <h1>Hello, visitor</h1>
                 <p className="protectedText">Protected content you should only access when you're logged</p>
+
             </div>
         );
     }
 }
 
 export default withRouter (AuthenticatedComponent)
+
+
