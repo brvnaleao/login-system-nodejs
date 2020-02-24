@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+.aaa{
+    margin:64px auto 0 auto;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
+}
+
+.base-container{
+    box-sizing: border-box;
+    width:700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-box-shadow: 10px 10px 15px 0px rgba(174,170,224,0.34);
+-moz-box-shadow: 10px 10px 15px 0px rgba(174,170,224,0.34);
+box-shadow: 10px 10px 15px 0px rgba(174,170,224,0.34);
+   
+
+}
+.header{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    margin-bottom: 24px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    .image{
+        width:21em;
+        img{
+            width:100%;
+            height: 100%;
+        }
+    }
+    .form{
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .form-group{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: fit-content;
+            label{
+                font-size: 20px;
+            }
+            input{
+                margin-top:8px;
+                margin-bottom:8px;
+                min-width: 18em;
+                padding: 8px 16px;
+                box-sizing: border-box;
+                font-size: 16px;
+                font-family: 'Montserrat', sans-serif;
+                background-color: #f3f3f3;
+                border: 1px solid #bbb;
+                border-radius:4px;
+                transition: all 250ms ease-in-out;
+
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+.footer{
+    margin: 16px auto;
+    box-sizing: border-box;
+    margin-top: 24px;
+   
+    .btn{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+          min-width: 18em;
+          padding: 8px 16px;
+        border-radius: 4px;
+        border: 1px solid #bbb;
+        background-color:  #6C63FF; 
+        transition:  all 250ms ease-in-out;
+        color: #000;
+        font-size: 16px;
+        &:hover{
+            background-color:  rgb(102, 181, 212);
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+
+}

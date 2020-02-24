@@ -44,8 +44,10 @@ router.post('/register', async (req, res)=>{
 
 router.post('/login', async (req, res) =>{
 
+  
+
     const { error } = loginValidation(req.body);
-    if(error) return res.status(400).send(error.details[0].message)
+    if(error) return res.status(400).send(error)
 
     //chenkin is the user is already in the database, cause he needs to be registered to login
 
@@ -57,6 +59,10 @@ router.post('/login', async (req, res) =>{
     //Create and assign a token
 
     const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET)
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+   
     res.header('auth-token', token).send(token)
     //res.send('Logged in!')
 
