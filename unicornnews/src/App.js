@@ -16,7 +16,8 @@ class App extends React.Component{
     <BrowserRouter>
     <Switch>
       <Route path="/Login" component={Home}/>
-      <Route path="/Registration" exact component={Registration}/>
+      <Route path="/Registration" exact component={Registration}/>      
+      <Route path="/AuthenticatedComponent" component={AuthenticatedComponent}/>
     </Switch>
   </BrowserRouter>
 

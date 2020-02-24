@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+body, html{
+    margin:0;
+    padding: 0;
+    height: 100%;
+}
+
+
+.div{
+    margin: 50px auto 0 auto;
+    width: 30%;
+    display: block;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding: 50px;
+    height: 200px;
+   
+    align-items: center;
+    justify-content: center ;
+    .protectedText{
+        font-size: 20px;
+    }
+  }

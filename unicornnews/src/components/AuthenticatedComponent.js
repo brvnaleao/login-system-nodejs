@@ -1,5 +1,7 @@
 import React, {Component}from 'react'
 import axios from 'axios'
+import { withRouter} from 'react-router-dom'
+import './loggedStyle.scss'
 
 class AuthenticatedComponent extends Component{
     constructor(props){
@@ -9,23 +11,24 @@ class AuthenticatedComponent extends Component{
             user: undefined
         }
     }
-
+    componentDidMount() {
+        this.jwtFunction();
+      }  
 
     jwtFunction(){
         const getJwt = () =>{
            return localStorage.getItem("jwt")
         }
-
-        const jwr = getJwt();
-
+        
+        const jwt = getJwt();
         if(!jwt){
             this.props.history.push('/Login')
         }
-        axios.get('/getUser', { headers: { "auth-token": jwt } }).then( res => res.setState({
+        axios.get('http://localhost:3000/api/getUser', { headers: { "auth-token": jwt } }).then( res => this.setState({
             
-            user = res.data
+            user : res.data
         })).catch(err => {
-            localStorage.removeItem()
+            //localStorage.removeItem()
             this.props.history.push('/Login')
         } )
     }
@@ -33,7 +36,7 @@ class AuthenticatedComponent extends Component{
 
 
     render() { 
-        if(this.state.user == undefinied){
+        if(this.state.user == undefined){
             return(
                 <div>
                     <h2>Loading...</h2>
@@ -41,11 +44,12 @@ class AuthenticatedComponent extends Component{
             )
         }
         return(
-            <div>
-                hELLO WORD
+            <div className="div">
+                <h1>Hello, visitor</h1>
+                <p className="protectedText">Protected content you should only access when you're logged</p>
             </div>
         );
     }
 }
 
-export default AuthenticatedComponent
+export default withRouter (AuthenticatedComponent)

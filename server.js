@@ -22,7 +22,7 @@ app.use(cors());
 
 //Routes Middlewares
 app.use('/api/user', authRoutes)
-app.use('/api/posts', postRoute)
+app.use('/api/getUser', postRoute)
 
 
 

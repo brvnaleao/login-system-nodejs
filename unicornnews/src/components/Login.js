@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import loginImg from "../images/login.svg";
 import './style.scss';
 import axios from 'axios'
-export default class Login extends Component{
+
+import { withRouter} from 'react-router-dom'
+class Login extends Component{
     constructor(props){
         super(props);
 
@@ -28,7 +30,12 @@ export default class Login extends Component{
             password: this.state.password,
             email: this.state.email
           
-        }).then(res => localStorage.setItem('jwt', res.data))
+            }).then(res => {
+                
+                localStorage.setItem('jwt', res.data);
+                this.props.history.push('/AuthenticatedComponent');
+            
+            })
     }
 
 
@@ -64,3 +71,4 @@ export default class Login extends Component{
     }
 
 }
+export default withRouter(Login)
