@@ -49,7 +49,7 @@ router.post('/login', async (req, res) =>{
     const { error } = loginValidation(req.body);
     if(error) return res.status(400).send(error)
 
-    //chenkin is the user is already in the database, cause he needs to be registered to login
+    //checking if the user is already in the database, cause he needs to be registered to login
 
     const user = await User.findOne({email: req.body.email})
     if(!user) return res.status(400).send("This E-mail is wrong!")
